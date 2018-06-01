@@ -18,7 +18,20 @@ module.exports = {
              '^/sf': ''
            }
        },
-       
+       '/invoice': {
+           target: 'https://www.post.lt/lt/invoices/search',
+           changeOrigin: true,
+           pathRewrite: {
+             '^/invoice': ''
+           }
+       },
+       '/refresh': {
+         target: 'https://www.post.lt/lt/captcha/refresh/invoices',
+         changeOrigin: true,
+         pathRewrite: {
+           '^/refresh': ''
+         }
+       }
     },
 
     // Various Dev Server settings
@@ -55,8 +68,21 @@ module.exports = {
             target: 'https://www.post.lt/lt/pagalba/sf',
             changeOrigin: true,
         },
-    },
-
+        /*
+        '/invoice': {
+            target: 'https://www.post.lt/lt/invoices/search',
+            changeOrigin: true,
+        },
+        '*': {
+         target: 'http://my-project.local',
+         changeOrigin: true,
+         secure: false,
+         cookieDomainRewrite: '',
+         onProxyReq: function (request, req, res) {
+           request.setHeader('origin', 'http://my-project.local')
+         }
+         */
+       }
   },
 
   build: {
