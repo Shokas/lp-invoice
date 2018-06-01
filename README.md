@@ -1,5 +1,7 @@
 # lp-invoice
 
+For now it does not work. Something wrong with the captcha session id. Could not figure it out. 
+
 > Lithuanian post invoice generator
 
 ## Build Setup
