@@ -1,19 +1,37 @@
 <template>
   <div id="app">
-    <InvoiceForm />
-    <Details />
+    <Invoice v-bind="details" />
+    <Details @detailsChanged="setDetails"/>
   </div>
 </template>
 
 <script>
-import InvoiceForm from './components/InvoiceForm.vue'
+import Invoice from './components/Invoice.vue'
 import Details from './components/Details.vue'
 
 export default {
   name: 'app',
   components: {
-    InvoiceForm,
+    Invoice,
     Details
+  },
+  data () {
+    return {
+      details: {
+        address: '',
+        title: '',
+        id: '',
+        vat: ''
+      }
+    }
+  },
+  methods: {
+    setDetails (data) {
+      this.details.address = data.address
+      this.details.title = data.title
+      this.details.id = data.id
+      this.details.vat = data.vat
+    }
   }
 }
 </script>
